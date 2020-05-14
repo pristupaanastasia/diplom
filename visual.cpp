@@ -25,7 +25,7 @@ int palitra = 1;
 int pbit = 0;
 int x_bit = 0;
 int y_bit = 0;
-QImage bipaint(80,400,32);
+QImage bipaint(140,400,32);
 QImage img(700,450,32);
 QImage img_buf;
 BitPaint::BitPaint(QWidget *parent,const char *name):QWidget(parent,name)
@@ -94,16 +94,31 @@ void CannonField::mousePressEvent(QMouseEvent *e)
 {
 	if(e->button() == Qt::LeftButton)
 	{
-		printf("%d - x %d - y\n",e->x(),e->y());
 		x_bit = e->x();
 		y_bit = e->y();
+		emit change_bit_x(x_bit);
+		emit change_bit_y(y_bit);
 		emit press_bit(); 
 	}
+}
+void BitPaint::change_y(int y)
+{
+	y_bit = y;
+	bitchange();
+}
+void BitPaint::change_x(int x)
+{
+	x_bit = x;
+	bitchange();
 }
 void BitPaint::bitchange(void)
 {
 	using namespace std;
-	QRgb colbit = img_buf.pixel(x_bit,y_bit);
+	QRgb colbit;
+	if (x_bit > img_buf.width() || y_bit > img_buf.height())
+		colbit = qRgb(0,0,0);
+	else
+	 	colbit = img_buf.pixel(x_bit,y_bit);
 	colbit = colbit << 8;
 	for(int i =0; i<3;i++)
 	{
@@ -115,7 +130,6 @@ void BitPaint::bitchange(void)
 				v[j] = 1;
 			else
 				v[j] = 0;
-			printf("%d ",v[j]);
 			colbit = colbit << 1;
 			}
 		i=4;
@@ -123,14 +137,13 @@ void BitPaint::bitchange(void)
 		else
 			colbit = colbit << 8;
 	}
-	printf("\n");
 	rebitpaint();
 }
 void BitPaint::rebitpaint(void)
 {
 	QPainter bpainter(this);
 	int t =0;
-	for(int i = 0;i<80;i++)
+	for(int i = 0;i<140;i++)
 	{
 		for(int j = 0;j<400;j++)//50 -1 bit
 		{
@@ -144,7 +157,7 @@ void BitPaint::rebitpaint(void)
 		t=0; 
 	}
 	QPixmap bit1(bipaint);
-	bit1.resize(80,400);
+	bit1.resize(140,400);
 	bpainter.drawPixmap(0,0,bit1);
 }
 void CannonField::paintEvent(QPaintEvent *)

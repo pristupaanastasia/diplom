@@ -1,7 +1,7 @@
 /****************************************************************************
 ** BitPaint meta object code from reading C++ file 'visual.h'
 **
-** Created: Mon May 11 21:47:24 2020
+** Created: Wed May 13 14:00:35 2020
 **      by: The Qt MOC ($Id: qt/moc_yacc.cpp   3.3.8   edited Feb 2 14:59 $)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -53,12 +53,22 @@ QMetaObject* BitPaint::staticMetaObject()
 	return metaObj;
     QMetaObject* parentObject = QWidget::staticMetaObject();
     static const QUMethod slot_0 = {"bitchange", 0, 0 };
+    static const QUParameter param_slot_1[] = {
+	{ 0, &static_QUType_int, 0, QUParameter::In }
+    };
+    static const QUMethod slot_1 = {"change_x", 1, param_slot_1 };
+    static const QUParameter param_slot_2[] = {
+	{ 0, &static_QUType_int, 0, QUParameter::In }
+    };
+    static const QUMethod slot_2 = {"change_y", 1, param_slot_2 };
     static const QMetaData slot_tbl[] = {
-	{ "bitchange()", &slot_0, QMetaData::Public }
+	{ "bitchange()", &slot_0, QMetaData::Public },
+	{ "change_x(int)", &slot_1, QMetaData::Public },
+	{ "change_y(int)", &slot_2, QMetaData::Public }
     };
     metaObj = QMetaObject::new_metaobject(
 	"BitPaint", parentObject,
-	slot_tbl, 1,
+	slot_tbl, 3,
 	0, 0,
 #ifndef QT_NO_PROPERTIES
 	0, 0,
@@ -83,6 +93,8 @@ bool BitPaint::qt_invoke( int _id, QUObject* _o )
 				 metaObject()->slot(_id,TRUE)?metaObject()->slot(_id,TRUE)->name:0, TRUE ) ) )
     {
     case 0: bitchange(); break;
+    case 1: change_x((int)static_QUType_int.get(_o+1)); break;
+    case 2: change_y((int)static_QUType_int.get(_o+1)); break;
     default:
 	return QWidget::qt_invoke( _id, _o );
     }
@@ -179,22 +191,32 @@ QMetaObject* CannonField::staticMetaObject()
     static const QUParameter param_signal_3[] = {
 	{ 0, &static_QUType_int, 0, QUParameter::In }
     };
-    static const QUMethod signal_3 = {"obzor_x", 1, param_signal_3 };
+    static const QUMethod signal_3 = {"change_bit_x", 1, param_signal_3 };
     static const QUParameter param_signal_4[] = {
 	{ 0, &static_QUType_int, 0, QUParameter::In }
     };
-    static const QUMethod signal_4 = {"obzor_y", 1, param_signal_4 };
+    static const QUMethod signal_4 = {"change_bit_y", 1, param_signal_4 };
+    static const QUParameter param_signal_5[] = {
+	{ 0, &static_QUType_int, 0, QUParameter::In }
+    };
+    static const QUMethod signal_5 = {"obzor_x", 1, param_signal_5 };
+    static const QUParameter param_signal_6[] = {
+	{ 0, &static_QUType_int, 0, QUParameter::In }
+    };
+    static const QUMethod signal_6 = {"obzor_y", 1, param_signal_6 };
     static const QMetaData signal_tbl[] = {
 	{ "text_kadr_change(const QString&)", &signal_0, QMetaData::Public },
 	{ "text_pal_change(const QString&)", &signal_1, QMetaData::Public },
 	{ "press_bit()", &signal_2, QMetaData::Public },
-	{ "obzor_x(int)", &signal_3, QMetaData::Public },
-	{ "obzor_y(int)", &signal_4, QMetaData::Public }
+	{ "change_bit_x(int)", &signal_3, QMetaData::Public },
+	{ "change_bit_y(int)", &signal_4, QMetaData::Public },
+	{ "obzor_x(int)", &signal_5, QMetaData::Public },
+	{ "obzor_y(int)", &signal_6, QMetaData::Public }
     };
     metaObj = QMetaObject::new_metaobject(
 	"CannonField", parentObject,
 	slot_tbl, 7,
-	signal_tbl, 5,
+	signal_tbl, 7,
 #ifndef QT_NO_PROPERTIES
 	0, 0,
 	0, 0,
@@ -241,8 +263,8 @@ void CannonField::press_bit()
  );
 }
 
-// SIGNAL obzor_x
-void CannonField::obzor_x( int t0 )
+// SIGNAL change_bit_x
+void CannonField::change_bit_x( int t0 )
 {
     activate_signal(
       metaObject()!=staticMetaObject()?
@@ -251,13 +273,33 @@ void CannonField::obzor_x( int t0 )
 , t0 );
 }
 
-// SIGNAL obzor_y
-void CannonField::obzor_y( int t0 )
+// SIGNAL change_bit_y
+void CannonField::change_bit_y( int t0 )
 {
     activate_signal(
       metaObject()!=staticMetaObject()?
       metaObject()->findSignal ( staticMetaObject()->signal(4,FALSE)->name, TRUE ) :
       staticMetaObject()->globalSignalIndex(4)
+, t0 );
+}
+
+// SIGNAL obzor_x
+void CannonField::obzor_x( int t0 )
+{
+    activate_signal(
+      metaObject()!=staticMetaObject()?
+      metaObject()->findSignal ( staticMetaObject()->signal(5,FALSE)->name, TRUE ) :
+      staticMetaObject()->globalSignalIndex(5)
+, t0 );
+}
+
+// SIGNAL obzor_y
+void CannonField::obzor_y( int t0 )
+{
+    activate_signal(
+      metaObject()!=staticMetaObject()?
+      metaObject()->findSignal ( staticMetaObject()->signal(6,FALSE)->name, TRUE ) :
+      staticMetaObject()->globalSignalIndex(6)
 , t0 );
 }
 
@@ -289,8 +331,10 @@ bool CannonField::qt_emit( int _id, QUObject* _o )
     case 0: text_kadr_change((const QString&)static_QUType_QString.get(_o+1)); break;
     case 1: text_pal_change((const QString&)static_QUType_QString.get(_o+1)); break;
     case 2: press_bit(); break;
-    case 3: obzor_x((int)static_QUType_int.get(_o+1)); break;
-    case 4: obzor_y((int)static_QUType_int.get(_o+1)); break;
+    case 3: change_bit_x((int)static_QUType_int.get(_o+1)); break;
+    case 4: change_bit_y((int)static_QUType_int.get(_o+1)); break;
+    case 5: obzor_x((int)static_QUType_int.get(_o+1)); break;
+    case 6: obzor_y((int)static_QUType_int.get(_o+1)); break;
     default:
 	return QWidget::qt_emit(_id,_o);
     }

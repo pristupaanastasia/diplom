@@ -19,6 +19,8 @@ class BitPaint : public QWidget
 		void rebitpaint(void);
 	public slots:
 		void bitchange();
+		void change_x(int);
+		void change_y(int);
 };
 class CannonField : public QWidget
 {
@@ -41,6 +43,8 @@ class CannonField : public QWidget
 		void text_kadr_change(const QString &);
 		void text_pal_change(const QString &);
 		void press_bit();
+		void change_bit_x(int);
+		void change_bit_y(int);
 		void obzor_x(int);
 		void obzor_y(int);
 };

@@ -31,6 +31,9 @@ class MainWindow: public QWidget
 	QLabel *text_y;
 	QLabel *sistem;
 	QLabel *sistime;
+	QLabel *px_text_x;
+	QLabel *px_text_y;
+	QLabel *px_bit_text;
 	QTimer *sistimer;
 	QComboBox it_x;
 	QComboBox it_y;

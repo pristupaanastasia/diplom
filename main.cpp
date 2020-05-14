@@ -5,10 +5,11 @@
 #include <qslider.h>
 #include <qspinbox.h>
 #include "arm.h"
+#include <iostream.h>
 
 int main(int argc,char *argv[])
 {
-	
+	//setEncoding(QTextStream::Unicode);
 	QApplication app(argc,argv);
 	QTranslator *tr1 = new QTranslator(0);
 	tr1->load("main_ru.qm",".");
@@ -23,6 +24,7 @@ int main(int argc,char *argv[])
 	app.installTranslator(tr3);
 
 	MainWindow *dialog = new MainWindow;
+	dialog->setCaption(QObject::tr("programm to image"));
 	//dialog->setGeometry(0,0,500,500);
 	app.setMainWidget(dialog);
 	dialog->show();	

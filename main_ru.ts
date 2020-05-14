@@ -1,5 +1,12 @@
 <!DOCTYPE TS><TS>
 <context>
+    <name></name>
+    <message>
+        <source>Programm to image file</source>
+        <translation type="obsolete">Программа формирования и отображения кадров</translation>
+    </message>
+</context>
+<context>
     <name>CannonField</name>
     <message>
         <source>Palitra green</source>
@@ -103,6 +110,17 @@
     <message>
         <source>power</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>change pixel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <source>programm to image</source>
+        <translation type="unfinished">Программа формирования и отображения кадров</translation>
     </message>
 </context>
 </TS>
