@@ -89,11 +89,11 @@
     </message>
     <message>
         <source>change x</source>
-        <translation type="unfinished">Изменить х</translation>
+        <translation type="unfinished">Изменить х </translation>
     </message>
     <message>
         <source>change y</source>
-        <translation type="unfinished">Изменить у</translation>
+        <translation type="unfinished"> Изменить у </translation>
     </message>
     <message>
         <source>system time</source>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <source>power</source>
-        <translation type="unfinished">Усиление</translation>
+        <translation type="unfinished"> Усиление </translation>
     </message>
     <message>
         <source>change pixel</source>
