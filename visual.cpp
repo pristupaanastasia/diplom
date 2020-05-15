@@ -103,12 +103,14 @@ void CannonField::mousePressEvent(QMouseEvent *e)
 }
 void BitPaint::change_y(int y)
 {
-	y_bit = y;
+	if(y<450)
+		y_bit = y;
 	bitchange();
 }
 void BitPaint::change_x(int x)
 {
-	x_bit = x;
+	if (x<700)
+		x_bit = x;
 	bitchange();
 }
 void BitPaint::bitchange(void)

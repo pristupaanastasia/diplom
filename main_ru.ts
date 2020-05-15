@@ -120,7 +120,7 @@
     <name>QObject</name>
     <message>
         <source>programm to image</source>
-        <translation type="unfinished">Программа формирования и отображения кадров</translation>
+        <translation type="unfinished">Программа имитации и отображения кадров информации</translation>
     </message>
 </context>
 </TS>

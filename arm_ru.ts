@@ -89,11 +89,11 @@
     </message>
     <message>
         <source>change x</source>
-        <translation type="unfinished">Изменить х </translation>
+        <translation type="unfinished"> Масштаб х </translation>
     </message>
     <message>
         <source>change y</source>
-        <translation type="unfinished"> Изменить у </translation>
+        <translation type="unfinished"> Масштаб у </translation>
     </message>
     <message>
         <source>system time</source>
